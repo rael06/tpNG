@@ -1,0 +1,16 @@
+.app-input-field {
+    background-color: orange;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        * {
+            margin: 10px 0;
+        }
+    }
+}
