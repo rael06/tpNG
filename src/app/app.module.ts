@@ -8,6 +8,7 @@ import { TitleComponent } from './title/title.component';
 import { ZoomerComponent } from './zoomer/zoomer.component';
 import { SizeButtonComponent } from './size-button/size-button.component';
 import { InputFieldComponent } from './input-field/input-field.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,11 @@ import { InputFieldComponent } from './input-field/input-field.component';
     SizeButtonComponent,
     InputFieldComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

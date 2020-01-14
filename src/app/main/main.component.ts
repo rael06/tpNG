@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-main',
@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class MainComponent implements OnInit {
     private fontSize = 20;
-    private fieldValue: string;
+    @Input() fieldValue: string;
 
     constructor() {
     }
@@ -17,11 +17,9 @@ export class MainComponent implements OnInit {
 
     changeSize($event: boolean) {
         $event ? this.fontSize++ : this.fontSize--;
-        console.log(this.fontSize);
     }
 
-    changeTitle($event: string) {
+    changeText($event: string) {
         this.fieldValue = $event;
-        console.log(this.fieldValue);
     }
 }

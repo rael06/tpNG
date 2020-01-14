@@ -1,5 +1,5 @@
 <div class="app-main">
-    <app-input-field (textChangedEvent)="changeTitle($event)"></app-input-field>
+    <app-input-field (textChanged)="changeText($event)"></app-input-field>
     <app-title [size]="fontSize" [title]="fieldValue"></app-title>
     <app-zoomer (eventChangeSize)="changeSize($event)"></app-zoomer>
 </div>

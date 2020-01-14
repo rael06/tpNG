@@ -1,5 +1,5 @@
 <div class="app-input-field">
     <label>Entrez le titre
-        <input (keyup)="onKey($event)" type="text">
+        <input type="text" [(ngModel)]="text" (ngModelChange)="onModelChange($event)">
     </label>
 </div>

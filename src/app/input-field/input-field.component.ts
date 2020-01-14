@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-input-field',
@@ -6,17 +6,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
     styleUrls: ['./input-field.component.scss']
 })
 export class InputFieldComponent implements OnInit {
-    @Output() textChangedEvent: EventEmitter<string> = new EventEmitter<string>();
-    private text = '';
-
+    @Input() text = '';
+    @Output() textChanged: EventEmitter<string> = new EventEmitter();
     constructor() {
     }
 
     ngOnInit() {
     }
 
-    onKey($event: KeyboardEvent) {
-        this.text = ($event.target as HTMLInputElement).value;
-        this.textChangedEvent.emit(this.text);
+    onModelChange(value: string) {
+        this.textChanged.emit(value);
     }
 }
