@@ -1,6 +1,7 @@
 <div class="app-title" id="app-title">
     <h1 [appHighlight]="alertSize" class="title" [style.font-size.px]="size">{{title}}</h1>
     <p class="alert">{{message}}
-<!--        <span *ngIf="(size | alertSize:18:22) !== alert">La taille est de : </span> {{size | alertSize:18:22}}-->
+        <!--        <span *ngIf="(size | alertSize:18:22) !== alert">La taille est de : </span> {{size | alertSize:18:22}}-->
     </p>
+    <p class="validity">La taille est {{validity}}</p>
 </div>
