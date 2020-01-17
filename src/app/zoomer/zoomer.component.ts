@@ -6,7 +6,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./zoomer.component.scss']
 })
 export class ZoomerComponent implements OnInit {
-  @Output() eventChangeSize: EventEmitter<boolean> = new EventEmitter();
+  @Output() eventChangeSize: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 

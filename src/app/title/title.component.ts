@@ -1,18 +1,29 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {AlertSizePipe} from '../alert-size.pipe';
 
 @Component({
     selector: 'app-title',
     templateUrl: './title.component.html',
     styleUrls: ['./title.component.scss']
 })
-export class TitleComponent implements OnInit {
+export class TitleComponent implements OnInit, OnChanges {
     @Input() size: number;
     @Input() title: string;
+    // private alert = 'Out of range';
+    private message: string | number;
+    private alertSize = false;
 
-    constructor() {
+    constructor(private alertSizePipe: AlertSizePipe) {
     }
 
     ngOnInit() {
         this.title = 'Mon Titre';
+    }
+
+    ngOnChanges() {
+        this.alertSize = this.alertSizePipe.transform(this.size, 18, 22) === this.alertSizePipe.outOfRange;
+        this.message = this.alertSize ?
+            this.alertSizePipe.outOfRange :
+            'La taille est de ' + this.alertSizePipe.transform(this.size, 18, 22);
     }
 }
